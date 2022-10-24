@@ -35,8 +35,17 @@ h2 {
   align-items: center;
 }
 
+.arrow-container {
+  width: 100%;
+  height: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .slider-content {
   width: 100%;
+  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -64,7 +73,7 @@ h2 {
   position: absolute;
   display: block;
   width: 90%;
-  height: 60%;
+  height: 70%;
   padding: 20px;
   /* background-color: green; */
   border-radius: 15px;
@@ -78,16 +87,16 @@ h2 {
 }
 
 .slide:nth-child(2) {
-  transform: translateZ(-15px);
+  transform: translateZ(-20px);
 }
 
 .slide:nth-child(3) {
-  transform: translateZ(-30px);
+  transform: translateZ(-40px);
   visibility: visible;
 }
 
 .slide:nth-child(n + 4) {
-  transform: translateZ(-30px);
+  transform: translateZ(-60px);
   visibility: hidden;
 }
 
@@ -119,23 +128,23 @@ h2 {
   }
 
   to {
-    transform: translateZ(-30px);
+    transform: translateZ(-60px);
   }
 }
 
 @keyframes moveThirdSlideFront {
   from {
-    transform: translateZ(-30px);
+    transform: translateZ(-40px);
   }
 
   to {
-    transform: translateZ(-15px);
+    transform: translateZ(-20px);
   }
 }
 
 @keyframes moveSecondSlideFront {
   from {
-    transform: translateZ(-15px);
+    transform: translateZ(-20px);
   }
 
   to {
@@ -167,7 +176,7 @@ h2 {
 
 @keyframes moveLastSlideFront {
   from {
-    transform: translateZ(-30px);
+    transform: translateZ(-60px);
   }
 
   to {
@@ -177,11 +186,11 @@ h2 {
 
 @keyframes moveSecondSlideBack {
   from {
-    transform: translateZ(-15px);
+    transform: translateZ(-20px);
   }
 
   to {
-    transform: translateZ(-30px);
+    transform: translateZ(-40px);
   }
 }
 
@@ -191,6 +200,6 @@ h2 {
   }
 
   to {
-    transform: translateZ(-15px);
+    transform: translateZ(-20px);
   }
 }

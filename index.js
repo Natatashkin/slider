@@ -122,6 +122,8 @@ slidesContaner.addEventListener("mouseleave", sliderRun);
 
 leftArrow.addEventListener("mouseenter", sliderStop);
 rightArrow.addEventListener("mouseenter", sliderStop);
+leftArrow.addEventListener("mouseleave", sliderRun);
+rightArrow.addEventListener("mouseleave", sliderRun);
 
 leftArrow.addEventListener("click", handleLeftClick);
 rightArrow.addEventListener("click", handleRightClick);
