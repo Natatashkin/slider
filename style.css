@@ -66,24 +66,11 @@ h2 {
   width: 90%;
   height: 60%;
   padding: 20px;
-  background-color: green;
+  /* background-color: green; */
   border-radius: 15px;
   -webkit-box-shadow: inset -3px 13px 42px 0px rgba(0, 0, 0, 0.4);
   -moz-box-shadow: inset -3px 13px 42px 0px rgba(0, 0, 0, 0.4);
   box-shadow: inset -3px 13px 42px 0px rgba(0, 0, 0, 0.4);
-  /* transition: ; */
-}
-
-.animationFirstSlide {
-  animation-name: moveSlideBack;
-  animation-duration: 500ms;
-  animation-timing-function: linear;
-}
-
-.animationNextSlide {
-  animation-name: moveSlideFront;
-  animation-duration: 500ms;
-  animation-timing-function: linear;
 }
 
 .slide:first-child {
@@ -96,9 +83,37 @@ h2 {
 
 .slide:nth-child(3) {
   transform: translateZ(-30px);
+  visibility: visible;
 }
 
-@keyframes moveSlideBack {
+.slide:nth-child(n + 4) {
+  transform: translateZ(-30px);
+  visibility: hidden;
+}
+
+/* Right arrow animation click  */
+.animationFirstSlide {
+  animation-name: moveFirstSlideBack;
+  animation-duration: 600ms;
+  animation-fill-mode: forwards;
+  animation-timing-function: linear;
+}
+
+.animationSecondSlide {
+  animation-name: moveSecondSlideFront;
+  animation-duration: 600ms;
+  animation-fill-mode: forwards;
+  animation-timing-function: linear;
+}
+
+.animationThirdSlide {
+  animation-name: moveThirdSlideFront;
+  animation-duration: 600ms;
+  animation-fill-mode: forwards;
+  animation-timing-function: linear;
+}
+
+@keyframes moveFirstSlideBack {
   from {
     transform: translateZ(0);
   }
@@ -108,7 +123,17 @@ h2 {
   }
 }
 
-@keyframes moveSlideFront {
+@keyframes moveThirdSlideFront {
+  from {
+    transform: translateZ(-30px);
+  }
+
+  to {
+    transform: translateZ(-15px);
+  }
+}
+
+@keyframes moveSecondSlideFront {
   from {
     transform: translateZ(-15px);
   }
@@ -118,12 +143,54 @@ h2 {
   }
 }
 
-@keyframes moveFromBack {
+/* Left arrow animation click  */
+.animationLastSlideFront {
+  animation-name: moveLastSlideFront;
+  animation-duration: 600ms;
+  animation-fill-mode: forwards;
+  animation-timing-function: linear;
+}
+
+.animationSecondSlideBack {
+  animation-name: moveSecondSlideBack;
+  animation-duration: 600ms;
+  animation-fill-mode: forwards;
+  animation-timing-function: linear;
+}
+
+.animationFirstSlideBack {
+  animation-name: moveFirstSlideBack;
+  animation-duration: 600ms;
+  animation-fill-mode: forwards;
+  animation-timing-function: linear;
+}
+
+@keyframes moveLastSlideFront {
   from {
+    transform: translateZ(-30px);
+  }
+
+  to {
     transform: translateZ(0);
+  }
+}
+
+@keyframes moveSecondSlideBack {
+  from {
+    transform: translateZ(-15px);
   }
 
   to {
     transform: translateZ(-30px);
+  }
+}
+
+@keyframes moveFirstSlideBack {
+  from {
+    transform: translateZ(0px);
+  }
+
+  to {
+    transform: translateZ(-15px);
   }
 }
